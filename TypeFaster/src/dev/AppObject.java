@@ -11,5 +11,4 @@ public abstract class AppObject implements CoreOperation{
     public TAG getTag(){
         return tag;
     }
-
 }

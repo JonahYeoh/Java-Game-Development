@@ -21,16 +21,22 @@ public class Generator implements CoreOperation{
         }
         catch(FileNotFoundException ex){
             ex.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
         }
+
         handler.addObject(new ScoreArea(62,167,TAG.ScoreArea));
         handler.addObject(new TextArea(62,250, TAG.TextArea, "somewhere"));
         handler.addObject(new ImageArea(62, 83, TAG.ImageArea, handler, window));
+
+        //handler.addObject(new Menu(350,300,TAG.Menu));
     }
 
     @Override
     public void tick() throws IOException {
+        if( handler.list.size() == 0){
+            handler.addObject(new ScoreArea(62,167,TAG.ScoreArea));
+            handler.addObject(new TextArea(62,250, TAG.TextArea, "somewhere"));
+            handler.addObject(new ImageArea(62, 83, TAG.ImageArea, handler, window));
+        }
         for(int i = 0; i < handler.list.size(); i++ ){
             AppObject obj = handler.list.get(i);
             if( obj.getTag() == TAG.TextArea)

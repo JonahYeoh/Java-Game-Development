@@ -27,4 +27,8 @@ public class Handler implements CoreOperation {
     public void removeObject(AppObject item){
         this.list.remove(item);
     }
+    public void removeAllObject(){
+        for(int i = 0; i < list.size(); i++)
+            removeObject(list.get(i));
+    }
 }

@@ -9,21 +9,18 @@ public class Application extends Canvas implements Runnable{
     private String title;
     private boolean running;
     private Thread thread;
-    private int WIDTH, HEIGHT;
+    public static final int WIDTH = 1000, HEIGHT = WIDTH / 12 * 9;
     private Handler handler;
     private Generator postman;
+    public static STATE state;
     public Application(){
-        WIDTH = 1000;
-        HEIGHT = WIDTH / 12 * 9;
         title = "Type Racer";
         handler = new Handler();
         postman = new Generator(handler,this);
         this.addKeyListener(new KeyInput(handler));
         Window window = new Window(WIDTH, HEIGHT,title, this);
-
-        //handler.addObject(new ScoreArea(62,167,TAG.ScoreArea));
-        //handler.addObject(new TextArea(62,250, TAG.TextArea, "somewhere over the rainbow sky are blue"));
-
+        state = STATE.MENU;
+        //state = STATE.PLAY;
     }
     @Override
     public void run() {
@@ -84,14 +81,38 @@ public class Application extends Canvas implements Runnable{
         }
         Graphics g = bs.getDrawGraphics();
         // Rendering start here
-        g.setColor(new Color(0, 255, 204));
-        g.fillRect(0,0,WIDTH,HEIGHT);
-        handler.render(g);
-
+        if(state == STATE.PLAY){
+            g.setColor(new Color(0, 255, 204));
+            g.fillRect(0,0,WIDTH,HEIGHT);
+            handler.render(g);
+        }
+        else{
+            handler.removeAllObject();
+            int x = 350; int y = 300;
+            Font fnt = new Font("Arial",1,50);
+            g.setColor(new Color(172, 230, 213));
+            g.fillRect(0,0,Application.WIDTH,Application.HEIGHT);
+            g.setColor(new Color(172, 223, 230));
+            g.fillRect(x,y,300,100);
+            g.setColor(Color.BLACK);
+            g.drawRect(x,y,300,100);
+            g.setFont(fnt);
+            g.drawString("MENU", x+75, y+70);
+            g.setColor(new Color(172, 223, 230));
+            g.fillRect(x,y+200,300,100);
+            g.setColor(Color.BLACK);
+            g.drawRect(x,y+200,300,100);
+            g.drawString("PLAY", x+85, y+270);
+        }
         g.dispose();
         bs.show();
     }
-
+    public static STATE getState(){
+        return state;
+    }
+    public static void setState(STATE state){
+        Application.state = state;
+    }
     public static void main(String[] args){
         Application app = new Application();
     }
