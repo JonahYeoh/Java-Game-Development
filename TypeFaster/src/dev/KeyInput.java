@@ -16,17 +16,17 @@ public class KeyInput extends KeyAdapter {
         int keyCode = e.getKeyCode();
         if( keyCode >= 0x41)
             keyCode += 32;
-        if( Application.getState() == STATE.MENU){
+        if( Application.getPage() == PAGE.MENU){
             System.out.println("MENU");
             if(keyCode == 0x30)
-                Application.setState(STATE.PLAY);
+                Application.setState(PAGE.PLAY);
         }
         for(int i = 0; i < handler.list.size(); i++ ){
             AppObject obj = handler.list.get(i);
-            if( Application.getState() == STATE.MENU){
+            if( Application.getPage() == PAGE.MENU){
                 System.out.println("MENU");
                 if(keyCode == 0x30)
-                    Application.setState(STATE.PLAY);
+                    Application.setState(PAGE.PLAY);
             }
             else{
                 System.out.println("PLAYING");

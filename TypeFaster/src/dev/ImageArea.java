@@ -24,7 +24,7 @@ public class ImageArea extends AppObject implements CoreOperation{
             }
         }
         x = 62 + 875*textArea.getCurrentIndex()/50;
-        System.out.println(x);
+        //System.out.println(x);
     }
 
     @Override
