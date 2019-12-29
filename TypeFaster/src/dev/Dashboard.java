@@ -19,15 +19,17 @@ public class Dashboard extends AppObject {
         CPM = new ArrayList<Integer>();
         SCORE = new ArrayList<Double>();
         ERROR = new ArrayList<Integer>();
+        avgCPM = 0;
+        avgSCORE = 0;
+        avgERROR = 0;
         data = readData();
         slicer();
     }
 
     @Override
     public void tick() throws IOException {
-        avgCPM = 0;
-        avgSCORE = 0;
-        avgERROR = 0;
+
+
         for( int i = 0; i < CPM.size(); i++){
             avgCPM += CPM.get(i);
             avgSCORE += SCORE.get(i);
@@ -41,9 +43,43 @@ public class Dashboard extends AppObject {
     @Override
     public void render(Graphics g) {
         g.setColor(Color.BLACK);
+        g.drawString("CPM Count : " + CPM.size(), 100, 50);
         g.drawString("CPM : " + avgCPM, 100, 100);
-        g.drawString("SCORE : " + avgSCORE, 100, 300);
-        g.drawString("ERROR : " + avgERROR, 100, 500);
+        g.drawString("SCORE : " + avgSCORE, 100, 150);
+        g.drawString("ERROR : " + avgERROR, 100, 200);
+        g.drawLine(100, 250, 100, 500);
+        g.drawLine(100,500, 900, 500);
+        // CPM
+        g.setColor(Color.darkGray);
+        int xx = 100;
+        int previousY = 500- CPM.get(0)/10;
+        int currentY;
+        for(int i = 1; i < CPM.size(); i++){
+            currentY = 500 - CPM.get(i).intValue()/10;
+            g.drawLine(xx, previousY, xx+(int)((double)800/CPM.size()),currentY );
+            previousY = currentY;
+            xx+=(int)((double)800/CPM.size());
+        }
+        //
+        g.setColor(Color.YELLOW);
+        xx = 100;
+        previousY = 500- ERROR.get(0)*10;
+        for(int i = 1; i < ERROR.size(); i++){
+            currentY = 500 - ERROR.get(i).intValue()*10;
+            g.drawLine(xx, previousY, xx+(int)((double)800/ERROR.size()),currentY );
+            previousY = currentY;
+            xx+=(int)((double)800/ERROR.size());
+        }
+        // SCORE
+        g.setColor(Color.RED);
+        xx = 100;
+        previousY = 500- SCORE.get(0).intValue();
+        for(int i = 1; i < SCORE.size(); i++){
+            currentY = 500- SCORE.get(i).intValue();
+            g.drawLine(xx, previousY, xx+(int)((double)800/SCORE.size()),currentY );
+            previousY = currentY;
+            xx+=(int)((double)800/SCORE.size());
+        }
     }
 
     private String readData() throws IOException {

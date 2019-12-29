@@ -19,7 +19,7 @@ public class Application extends Canvas implements Runnable{
         this.addKeyListener(new KeyInput(handler));
         this.addMouseListener(new MouseInput(handler));
         Window window = new Window(WIDTH, HEIGHT,title, this);
-        page = PAGE.STARTUP;
+        page = PAGE.PLAY;
         //state = STATE.PLAY;
     }
     @Override
