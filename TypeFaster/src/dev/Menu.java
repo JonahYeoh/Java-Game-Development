@@ -29,6 +29,7 @@ public class Menu extends AppObject implements CoreOperation {
         g.setColor(Color.BLACK);
         g.drawRect(x,y+200,300,100);
         g.drawString("PLAY", x+85, y+270);
+        System.out.println("MENU");
     }
 
 }
