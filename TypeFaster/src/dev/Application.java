@@ -3,27 +3,24 @@ package dev;
 import java.awt.*;
 import java.awt.image.BufferStrategy;
 import java.io.IOException;
-import java.util.concurrent.TimeUnit;
 
 public class Application extends Canvas implements Runnable{
     private String title;
     private boolean running;
     private Thread thread;
-    private int WIDTH, HEIGHT;
+    public static final int WIDTH = 1000, HEIGHT = WIDTH / 12 * 9;
     private Handler handler;
     private Generator postman;
+    public static PAGE page;
     public Application(){
-        WIDTH = 1000;
-        HEIGHT = WIDTH / 12 * 9;
         title = "Type Racer";
         handler = new Handler();
         postman = new Generator(handler,this);
         this.addKeyListener(new KeyInput(handler));
+        this.addMouseListener(new MouseInput(handler));
         Window window = new Window(WIDTH, HEIGHT,title, this);
-
-        //handler.addObject(new ScoreArea(62,167,TAG.ScoreArea));
-        //handler.addObject(new TextArea(62,250, TAG.TextArea, "somewhere over the rainbow sky are blue"));
-
+        page = PAGE.STARTUP;
+        //state = STATE.PLAY;
     }
     @Override
     public void run() {
@@ -84,12 +81,18 @@ public class Application extends Canvas implements Runnable{
         }
         Graphics g = bs.getDrawGraphics();
         // Rendering start here
-        g.setColor(new Color(0, 255, 204));
-        g.fillRect(0,0,WIDTH,HEIGHT);
+        g.setColor(new Color(51, 204, 204));
+        g.fillRect(0,0,WIDTH, HEIGHT);
         handler.render(g);
 
         g.dispose();
         bs.show();
+    }
+    public static PAGE getPage(){
+        return Application.page;
+    }
+    public static void setPage(PAGE state){
+        Application.page = state;
     }
 
     public static void main(String[] args){

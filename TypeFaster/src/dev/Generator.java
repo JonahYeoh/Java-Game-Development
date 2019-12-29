@@ -21,32 +21,60 @@ public class Generator implements CoreOperation{
         }
         catch(FileNotFoundException ex){
             ex.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
         }
-        handler.addObject(new ScoreArea(62,167,TAG.ScoreArea));
-        handler.addObject(new TextArea(62,250, TAG.TextArea, "somewhere"));
-        handler.addObject(new ImageArea(62, 83, TAG.ImageArea, handler, window));
+
     }
 
     @Override
     public void tick() throws IOException {
-        for(int i = 0; i < handler.list.size(); i++ ){
-            AppObject obj = handler.list.get(i);
-            if( obj.getTag() == TAG.TextArea)
-                textArea = (TextArea)obj;
-            if( obj.getTag() == TAG.ScoreArea)
-                score = (ScoreArea)obj;
+        PAGE page = Application.getPage();
+        if( page == PAGE.PLAY){
+            if( handler.list.size() != 3){
+                handler.removeAllObject();
+                handler.addObject(new ScoreArea(62,167,TAG.ScoreArea));
+                handler.addObject(new TextArea(62,250, TAG.TextArea, "somewhere"));
+                handler.addObject(new ImageArea(62, 83, TAG.ImageArea, handler, window));
+            }
+            for(int i = 0; i < handler.list.size(); i++ ){
+                AppObject obj = handler.list.get(i);
+                if( obj.getTag() == TAG.TextArea)
+                    textArea = (TextArea)obj;
+                if( obj.getTag() == TAG.ScoreArea)
+                    score = (ScoreArea)obj;
+            }
+            if( textArea.endOfLine() ){
+                handler.removeObject(textArea);
+                System.out.println("removing " + textArea.getTag());
+                handler.addObject(new TextArea(62,250, TAG.TextArea, readNextParagraph()));
+                score.setEndSec(TimeUnit.SECONDS.convert(System.nanoTime(), TimeUnit.NANOSECONDS));
+                score.setSpeed(50);
+                String dataString = "Score="+score.getSCORE()+"&CPM="+score.getCPM()+"&ERROR="+score.getERROR();
+                writeRecord(dataString);
+            }
         }
-        if( textArea.endOfLine() ){
-            handler.removeObject(textArea);
-            System.out.println("removing " + textArea.getTag());
-            handler.addObject(new TextArea(62,250, TAG.TextArea, readNextParagraph()));
-            score.setEndSec(TimeUnit.SECONDS.convert(System.nanoTime(), TimeUnit.NANOSECONDS));
-            score.setSpeed(50);
-            String dataString = "Score="+score.getSCORE()+"&CPM="+score.getCPM()+"&ERROR="+score.getERROR();
-            writeRecord(dataString);
+        else if( page == PAGE.HOME){
+            handler.removeAllObject();
+            handler.addObject(new HomePage(350, 250, TAG.HOME));
         }
+        else if(page == PAGE.STARTUP){
+            handler.removeAllObject();
+            handler.addObject(new StartUp(350, 250, TAG.STARTUP));
+            System.out.println("generating menu");
+        }
+        else if( page == PAGE.REGISTRATION){
+            handler.removeAllObject();
+            handler.addObject(new NewMember(300, 250, TAG.REGISTRATION));
+        }
+        else if( page == PAGE.LOGIN){
+            handler.removeAllObject();
+            handler.addObject(new LogIn(300, 250, TAG.LOGIN));
+        }
+        else if( page == PAGE.DASHBOARD){
+            handler.removeAllObject();
+            System.out.println("Feature not ready");
+            // TODO
+        }
+
     }
 
     @Override
