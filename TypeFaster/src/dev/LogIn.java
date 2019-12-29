@@ -12,12 +12,14 @@ public class LogIn extends AppObject {
     protected Color color;
     protected ArrayList<Character> name;
     protected ArrayList<Character> pwd;
+    private static boolean FLAG = false;
     public LogIn(int x, int y, TAG tag) {
         super(x, y, tag);
         fnt = new Font("Arial",1,50);
         color = new Color(172, 230, 213);
         name = new ArrayList<>();
         pwd = new ArrayList<>();
+        LogIn.FLAG = true;
     }
     public void backSpace(boolean NAME){
         if( NAME ){
@@ -85,5 +87,11 @@ public class LogIn extends AppObject {
         String data = new String(buffer,0,num);
         fr.close();
         return data;
+    }
+    public static boolean getFLAG(){
+        return LogIn.FLAG;
+    }
+    public static void clearFLAG(){
+        LogIn.FLAG = false;
     }
 }

@@ -12,6 +12,7 @@ public class Application extends Canvas implements Runnable{
     private Handler handler;
     private Generator postman;
     public static PAGE page;
+    protected static String player;
     public Application(){
         title = "Type Racer";
         handler = new Handler();
@@ -19,7 +20,7 @@ public class Application extends Canvas implements Runnable{
         this.addKeyListener(new KeyInput(handler));
         this.addMouseListener(new MouseInput(handler));
         Window window = new Window(WIDTH, HEIGHT,title, this);
-        page = PAGE.PLAY;
+        page = PAGE.STARTUP;
         //state = STATE.PLAY;
     }
     @Override
@@ -94,7 +95,12 @@ public class Application extends Canvas implements Runnable{
     public static void setPage(PAGE state){
         Application.page = state;
     }
-
+    public static void setPlayer(String name){
+        Application.player = name;
+    }
+    public static String getPlayer(){
+        return Application.player;
+    }
     public static void main(String[] args){
         Application app = new Application();
     }

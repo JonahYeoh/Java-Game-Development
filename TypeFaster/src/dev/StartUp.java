@@ -6,10 +6,12 @@ import java.io.IOException;
 public class StartUp extends AppObject {
     protected Font fnt;
     protected Color color;
+    private static boolean FLAG = false;
     public StartUp(int x, int y, TAG tag) {
         super(x, y, tag);
         fnt = new Font("Arial",1,50);
         color = new Color(172, 230, 213);
+        StartUp.FLAG = true;
     }
 
     @Override
@@ -38,5 +40,12 @@ public class StartUp extends AppObject {
         g.setColor(Color.BLACK);
         g.drawRect(x,y+300,300,100);
         g.drawString("QUIT", x+85, y+370);
+    }
+    public static boolean getFLAG(){
+        return StartUp.FLAG;
+    }
+    public static void clearFLAG(){
+        StartUp.FLAG = false;
+        System.out.println("clearing StartUP");
     }
 }

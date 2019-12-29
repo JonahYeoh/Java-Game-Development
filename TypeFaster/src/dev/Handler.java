@@ -28,7 +28,20 @@ public class Handler implements CoreOperation {
         this.list.remove(item);
     }
     public void removeAllObject(){
-        for(int i = 0; i < list.size(); i++)
-            removeObject(list.get(i));
+        for(int i = 0; i < list.size(); i++) {
+            AppObject obj = list.get(i);
+            if( obj.getTag() == TAG.DASHBOARD)
+                Dashboard.clearFLAG();
+            else if ( obj.getTag() == TAG.LOGIN)
+                LogIn.clearFLAG();
+            else if( obj.getTag() == TAG.REGISTRATION)
+                NewMember.clearFLAG();
+            else if ( obj.getTag() == TAG.STARTUP)
+                StartUp.clearFLAG();
+            else if( obj.getTag() == TAG.HOME)
+                HomePage.clearFLAG();
+            System.out.println(obj.getTag());
+            removeObject(obj);
+        }
     }
 }

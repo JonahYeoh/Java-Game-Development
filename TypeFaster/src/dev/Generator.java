@@ -54,24 +54,34 @@ public class Generator implements CoreOperation{
             }
         }
         else if( page == PAGE.HOME){
-            handler.removeAllObject();
-            handler.addObject(new HomePage(350, 250, TAG.HOME));
+            if( !HomePage.getFLAG()) {
+                handler.removeAllObject();
+                handler.addObject(new HomePage(350, 250, TAG.HOME));
+            }
         }
         else if(page == PAGE.STARTUP){
-            handler.removeAllObject();
-            handler.addObject(new StartUp(350, 250, TAG.STARTUP));
+            if( !StartUp.getFLAG()) {
+                handler.removeAllObject();
+                handler.addObject(new StartUp(350, 250, TAG.STARTUP));
+            }
         }
         else if( page == PAGE.REGISTRATION){
-            handler.removeAllObject();
-            handler.addObject(new NewMember(300, 250, TAG.REGISTRATION));
+            if( !NewMember.getFLAG()){
+                handler.removeAllObject();
+                handler.addObject(new NewMember(300, 250, TAG.REGISTRATION));
+            }
         }
         else if( page == PAGE.LOGIN){
-            handler.removeAllObject();
-            handler.addObject(new LogIn(300, 250, TAG.LOGIN));
+            if( !LogIn.getFLAG()) {
+                handler.removeAllObject();
+                handler.addObject(new LogIn(300, 250, TAG.LOGIN));
+            }
         }
         else if( page == PAGE.DASHBOARD){
-            handler.removeAllObject();
-            handler.addObject(new Dashboard(0,0,TAG.DASHBOARD));
+            if( !Dashboard.getFLAG()) {
+                handler.removeAllObject();
+                handler.addObject(new Dashboard(0, 0, TAG.DASHBOARD));
+            }
         }
 
     }
@@ -83,7 +93,7 @@ public class Generator implements CoreOperation{
     public void writeRecord(String data){
         FileWriter fw;
         try{
-            fw = new FileWriter("DB/record.txt", true);
+            fw = new FileWriter("DB/data_" + Application.getPlayer() + ".txt", true);
             fw.write(data);
             fw.close();
         }

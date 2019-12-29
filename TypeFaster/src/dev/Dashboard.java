@@ -14,6 +14,7 @@ public class Dashboard extends AppObject {
     protected ArrayList<Integer> ERROR;
     protected double avgCPM, avgSCORE, avgERROR;
     protected String data;
+    private static boolean FLAG = false;
     public Dashboard(int x, int y, TAG tag) throws IOException {
         super(x, y, tag);
         CPM = new ArrayList<Integer>();
@@ -24,12 +25,11 @@ public class Dashboard extends AppObject {
         avgERROR = 0;
         data = readData();
         slicer();
+        Dashboard.FLAG = true;
     }
 
     @Override
     public void tick() throws IOException {
-
-
         for( int i = 0; i < CPM.size(); i++){
             avgCPM += CPM.get(i);
             avgSCORE += SCORE.get(i);
@@ -81,9 +81,14 @@ public class Dashboard extends AppObject {
             xx+=(int)((double)800/SCORE.size());
         }
     }
-
+    public static boolean getFLAG(){
+        return Dashboard.FLAG;
+    }
+    public static void clearFLAG(){
+        Dashboard.FLAG = false;
+    }
     private String readData() throws IOException {
-        FileReader fr = new FileReader("DB/record.txt");
+        FileReader fr = new FileReader("DB/data_"+ Application.getPlayer() + ".txt");
         char buffer[] = new char[256];
         int num = 0;
         String str = "";

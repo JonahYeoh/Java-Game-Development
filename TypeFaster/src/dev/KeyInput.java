@@ -35,7 +35,8 @@ public class KeyInput extends KeyAdapter {
             clickLogIn(keyCode);
         else if( page == PAGE.PLAY)
             clickPlay(keyCode);
-
+        else if( page == PAGE.DASHBOARD)
+            clickDashboard(keyCode);
     }
 
     public void keyReleased(KeyEvent e){
@@ -48,10 +49,34 @@ public class KeyInput extends KeyAdapter {
 
     }
     private void clickRegistration(int key){
+        NewMember obj =  (NewMember) handler.list.get(0);
+        if( key != KeyEvent.VK_BACK_SPACE){
+            if( obj.selectedNAME() && !obj.filled(true)){
+                obj.addCharacter(true,(char)key);
+            }
+            else if (!obj.filled(false)){
+                obj.addCharacter(false,(char)key);
+            }
+        }
+        else{
+            if( obj.selectedNAME()){
+                obj.backSpace(true);
+            }
+            else{
+                obj.backSpace(false);
+            }
+        }
 
     }
     private void clickLogIn(int key){
 
+    }
+    private void clickDashboard(int key){
+        if( key == KeyEvent.VK_ESCAPE)
+        {
+            Application.setPage(PAGE.HOME);
+            return;
+        }
     }
     private void clickPlay(int key){
         if( key == KeyEvent.VK_ESCAPE)
