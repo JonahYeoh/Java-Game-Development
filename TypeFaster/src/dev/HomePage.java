@@ -20,7 +20,7 @@ public class HomePage extends AppObject {
     @Override
     public void render(Graphics g) {
         //int x = 350; int y = 250;
-        g.setColor(Color.WHITE);
+        g.setColor(color);
         g.fillRect(0,0,Application.WIDTH,Application.HEIGHT);
         g.setColor(new Color(172, 223, 230));
         g.fillRect(x,y,300,100);

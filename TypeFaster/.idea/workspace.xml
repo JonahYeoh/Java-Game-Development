@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="57a11fd4-94c8-4a24-a13b-83355b034ffd" name="Default Changelist" comment="" />
+    <list default="true" id="57a11fd4-94c8-4a24-a13b-83355b034ffd" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/dev/Dashboard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DB/record.txt" beforeDir="false" afterPath="$PROJECT_DIR$/DB/record.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TypeFaster/dev/Generator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TypeFaster/dev/Generator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TypeFaster/dev/HomePage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TypeFaster/dev/HomePage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TypeFaster/dev/ScoreArea.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TypeFaster/dev/ScoreArea.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TypeFaster/dev/TextArea.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TypeFaster/dev/TextArea.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dev/Generator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dev/Generator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dev/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dev/HomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dev/ScoreArea.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dev/ScoreArea.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dev/TextArea.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dev/TextArea.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

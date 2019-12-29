@@ -29,11 +29,12 @@ public class Generator implements CoreOperation{
     public void tick() throws IOException {
         PAGE page = Application.getPage();
         if( page == PAGE.PLAY){
-            if( handler.list.size() != 3){
+            if( !handler.list.contains(score)){
                 handler.removeAllObject();
                 handler.addObject(new ScoreArea(62,167,TAG.ScoreArea));
                 handler.addObject(new TextArea(62,250, TAG.TextArea, "somewhere"));
                 handler.addObject(new ImageArea(62, 83, TAG.ImageArea, handler, window));
+                System.out.println("Size : " + handler.list.size());
             }
             for(int i = 0; i < handler.list.size(); i++ ){
                 AppObject obj = handler.list.get(i);
@@ -48,7 +49,7 @@ public class Generator implements CoreOperation{
                 handler.addObject(new TextArea(62,250, TAG.TextArea, readNextParagraph()));
                 score.setEndSec(TimeUnit.SECONDS.convert(System.nanoTime(), TimeUnit.NANOSECONDS));
                 score.setSpeed(50);
-                String dataString = "Score="+score.getSCORE()+"&CPM="+score.getCPM()+"&ERROR="+score.getERROR();
+                String dataString = ""+score.getSCORE()+"&"+score.getCPM()+"&"+score.getERROR()+"&";
                 writeRecord(dataString);
             }
         }
@@ -59,7 +60,6 @@ public class Generator implements CoreOperation{
         else if(page == PAGE.STARTUP){
             handler.removeAllObject();
             handler.addObject(new StartUp(350, 250, TAG.STARTUP));
-            System.out.println("generating menu");
         }
         else if( page == PAGE.REGISTRATION){
             handler.removeAllObject();
@@ -71,8 +71,7 @@ public class Generator implements CoreOperation{
         }
         else if( page == PAGE.DASHBOARD){
             handler.removeAllObject();
-            System.out.println("Feature not ready");
-            // TODO
+            handler.addObject(new Dashboard(0,0,TAG.DASHBOARD));
         }
 
     }
@@ -84,9 +83,8 @@ public class Generator implements CoreOperation{
     public void writeRecord(String data){
         FileWriter fw;
         try{
-            fw = new FileWriter("DB/record.txt",true);
+            fw = new FileWriter("DB/record.txt", true);
             fw.write(data);
-            fw.write("\r\n");
             fw.close();
         }
         catch(IOException ex){
