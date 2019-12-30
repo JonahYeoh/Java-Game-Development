@@ -2,36 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="57a11fd4-94c8-4a24-a13b-83355b034ffd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/DB/1234.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DB/Personal/.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DB/Personal/1234.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DB/Personal/fafd.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DB/Personal/fasd.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DB/Personal/ffadfadfa.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DB/data_1234.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DB/data_fafd.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DB/data_null.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DB/Personal/1111.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DB/Personal/ouuy.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DB/data_1111.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TypeFaster/dev/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TypeFaster/dev/Application.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TypeFaster/dev/Dashboard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TypeFaster/dev/Dashboard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TypeFaster/dev/Generator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TypeFaster/dev/Generator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DB/data_1234.txt" beforeDir="false" afterPath="$PROJECT_DIR$/DB/data_1234.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DB/data_null.txt" beforeDir="false" afterPath="$PROJECT_DIR$/DB/data_null.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TypeFaster/dev/Handler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TypeFaster/dev/Handler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TypeFaster/dev/HomePage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TypeFaster/dev/HomePage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TypeFaster/dev/KeyInput.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TypeFaster/dev/KeyInput.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TypeFaster/dev/LogIn.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TypeFaster/dev/LogIn.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TypeFaster/dev/MouseInput.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TypeFaster/dev/MouseInput.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TypeFaster/dev/NewMember.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TypeFaster/dev/NewMember.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TypeFaster/dev/StartUp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TypeFaster/dev/StartUp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dev/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dev/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dev/Dashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dev/Dashboard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dev/Generator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dev/Generator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dev/Handler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dev/Handler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dev/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dev/HomePage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dev/KeyInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dev/KeyInput.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dev/LogIn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dev/LogIn.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dev/MouseInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dev/MouseInput.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dev/NewMember.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dev/NewMember.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dev/StartUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dev/StartUp.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

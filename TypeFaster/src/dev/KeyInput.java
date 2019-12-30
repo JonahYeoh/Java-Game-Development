@@ -54,7 +54,7 @@ public class KeyInput extends KeyAdapter {
             if( obj.selectedNAME() && !obj.filled(true)){
                 obj.addCharacter(true,(char)key);
             }
-            else if (!obj.filled(false)){
+            else if (!obj.selectedNAME() && !obj.filled(false)){
                 obj.addCharacter(false,(char)key);
             }
         }
@@ -68,9 +68,29 @@ public class KeyInput extends KeyAdapter {
         }
 
     }
-    private void clickLogIn(int key){
 
+    private void clickLogIn(int key){
+        LogIn obj =  (LogIn) handler.list.get(0);
+        if( key != KeyEvent.VK_BACK_SPACE){
+            if( obj.selectedNAME() && !obj.filled(true)){
+                obj.addCharacter(true,(char)key);
+                System.out.println("login name");
+            }
+            else if (!obj.selectedNAME() && !obj.filled(false)){
+                obj.addCharacter(false,(char)key);
+                System.out.println("login pwd");
+            }
+        }
+        else{
+            if( obj.selectedNAME()){
+                obj.backSpace(true);
+            }
+            else{
+                obj.backSpace(false);
+            }
+        }
     }
+
     private void clickDashboard(int key){
         if( key == KeyEvent.VK_ESCAPE)
         {

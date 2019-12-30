@@ -52,12 +52,15 @@ public class MouseInput extends MouseAdapter {
         }
     }
     public void clickLogIn(int x, int y){
+        LogIn obj = (LogIn)handler.list.get(0);
         if( x >= 500 && x <= 700){
             if( y >= 200 && y <= 260){
                 System.out.println("NAME");
+                obj.textBoxSelector(true);
             }
             else if( y >= 300 && y <= 360){
                 System.out.println("PWD");
+                obj.textBoxSelector(false);
             }
         }
         if( x >= 350 && x <= 650){

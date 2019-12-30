@@ -26,9 +26,10 @@ public class Handler implements CoreOperation {
     }
     public void removeObject(AppObject item){
         this.list.remove(item);
+
     }
     public void removeAllObject(){
-        for(int i = 0; i < list.size(); i++) {
+        for(int i = list.size()-1; i >= 0; i--) {
             AppObject obj = list.get(i);
             if( obj.getTag() == TAG.DASHBOARD)
                 Dashboard.clearFLAG();
@@ -41,6 +42,7 @@ public class Handler implements CoreOperation {
             else if( obj.getTag() == TAG.HOME)
                 HomePage.clearFLAG();
             System.out.println(obj.getTag());
+            System.out.println("Current size : " + list.size());
             removeObject(obj);
         }
     }
