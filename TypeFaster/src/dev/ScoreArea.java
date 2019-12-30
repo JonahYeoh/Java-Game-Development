@@ -1,16 +1,21 @@
 package dev;
 
+import com.sun.org.apache.bcel.internal.generic.INSTANCEOF;
+
 import java.awt.*;
+import java.io.EOFException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.*;
 
 public class ScoreArea extends AppObject {
     private int error, characterPerMinute;
     double score;
     private long startSec, endSec;
-    protected Deque<Integer> CPM;
-    protected Deque<Double> SCORE;
-    protected Deque<Integer> ERROR;
-    public ScoreArea(int x, int y, TAG tag) {
+    protected LinkedList<Integer>CPM;
+    protected LinkedList<Double>SCORE;
+    protected LinkedList<Integer>ERROR;
+    public ScoreArea(int x, int y, TAG tag) throws IOException {
         super(x, y, tag);
         CPM = new LinkedList<>();
         SCORE = new LinkedList<>();
@@ -31,7 +36,8 @@ public class ScoreArea extends AppObject {
     public void render(Graphics g) {
         Font fnt = new Font("Helvetica",1,35);
         g.setFont(fnt);
-
+        g.setColor(new Color(51, 204, 204));
+        g.fillRect(0,0,Application.WIDTH, Application.HEIGHT);
         g.setColor(new Color(102,255,204));
         g.fillRect(x,y,875,83);
 
@@ -53,7 +59,6 @@ public class ScoreArea extends AppObject {
         return error;
     }
     public void reset(){
-        //setScore(0);
         setError(0);
         setStartSec(0);
         setEndSec(0);
@@ -72,12 +77,10 @@ public class ScoreArea extends AppObject {
     }
     public void setSpeed(int length){
         long diff = endSec - startSec;
-        System.out.println(endSec + " " + startSec);
-        System.out.println("DIFF : " + diff);
         double speed = length/(double)diff;
         speed *= 60;
         characterPerMinute = (int)speed;
-        score = (error == 0)?100:100-((double)error/(double)length);
+        score = (error == 0)?100:100-((double)error/(double)length*100);
         SCORE.add(score);
         ERROR.add(error);
         CPM.add(characterPerMinute);
@@ -92,4 +95,6 @@ public class ScoreArea extends AppObject {
     public int getERROR(){
         return ERROR.getLast();
     }
+
+
 }

@@ -53,7 +53,7 @@ public class TextArea extends AppObject {
     @Override
     public void render(Graphics g) {
         trimmer();
-        g.setColor(Color.WHITE);
+        g.setColor(new Color(102, 255, 255));
         g.fillRect(x,y,875,415);
         Font fnt = new Font("Helvetica",1,20);
         g.setFont(fnt);

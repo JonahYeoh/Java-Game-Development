@@ -2,37 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="57a11fd4-94c8-4a24-a13b-83355b034ffd" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DB/Personal/1111.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DB/Personal/ouuy.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DB/data_1111.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DB/record.txt" beforeDir="false" afterPath="$PROJECT_DIR$/DB/record.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TypeFaster/META-INF/TypeFaster.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TypeFaster/dev/AppObject.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TypeFaster/dev/Application.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TypeFaster/dev/AudioReader.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TypeFaster/dev/CoreOperation.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TypeFaster/dev/Generator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TypeFaster/dev/Handler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TypeFaster/dev/HomePage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TypeFaster/dev/ImageArea.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TypeFaster/dev/KeyInput.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TypeFaster/dev/LogIn.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TypeFaster/dev/Menu.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TypeFaster/dev/MouseInput.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TypeFaster/dev/NewMember.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TypeFaster/dev/PAGE.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TypeFaster/dev/ProgressBar.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TypeFaster/dev/ScoreArea.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TypeFaster/dev/StartUp.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TypeFaster/dev/StringReader.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TypeFaster/dev/TAG.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TypeFaster/dev/TextArea.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TypeFaster/dev/Window.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dev/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dev/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dev/Generator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dev/Generator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dev/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dev/HomePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dev/ImageArea.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dev/ImageArea.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DB/data_1234.txt" beforeDir="false" afterPath="$PROJECT_DIR$/DB/data_1234.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DB/data_null.txt" beforeDir="false" afterPath="$PROJECT_DIR$/DB/data_null.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TypeFaster/dev/Handler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TypeFaster/dev/Handler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dev/Handler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dev/Handler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dev/KeyInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dev/KeyInput.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dev/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dev/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dev/LogIn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dev/LogIn.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dev/MouseInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dev/MouseInput.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -54,8 +33,11 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectId" id="1VVgYBrWzrpukEnGUsfCNEJTm55" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
@@ -135,5 +117,8 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>
