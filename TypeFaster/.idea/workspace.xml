@@ -2,17 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="57a11fd4-94c8-4a24-a13b-83355b034ffd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/DB/Personal/1111.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DB/Personal/ouuy.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DB/data_1111.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DB/data_1234.txt" beforeDir="false" afterPath="$PROJECT_DIR$/DB/data_1234.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DB/data_null.txt" beforeDir="false" afterPath="$PROJECT_DIR$/DB/data_null.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TypeFaster/dev/Handler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TypeFaster/dev/Handler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dev/Handler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dev/Handler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dev/KeyInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dev/KeyInput.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TypeFaster/dev/LogIn.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TypeFaster/dev/LogIn.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TypeFaster/dev/MouseInput.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TypeFaster/dev/MouseInput.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TypeFaster/dev/ProgressBar.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dev/LogIn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dev/LogIn.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dev/MouseInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dev/MouseInput.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dev/ProgressBar.java" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -103,6 +99,14 @@
       <option name="presentableId" value="Default" />
       <updated>1577343721739</updated>
     </task>
+    <task id="LOCAL-00001" summary="Query code corrupted especially the workspace">
+      <created>1577695182569</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1577695182569</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -120,5 +124,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Query code corrupted especially the workspace" />
+    <option name="LAST_COMMIT_MESSAGE" value="Query code corrupted especially the workspace" />
   </component>
 </project>

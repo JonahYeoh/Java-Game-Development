@@ -89,19 +89,29 @@ public class LogIn extends AppObject {
         g.drawString("CONFIRM",x+80,y+260);
     }
 
-    public String query() throws IOException {
+    public boolean query() throws IOException {
         String n = "";
         String p = "";
+        boolean state = false;
         for( int i = 0; i < name.size(); i++){
             n += name.get(i);
             p += pwd.get(i);
         }
-        FileReader fr = new FileReader("DB/Personal/"+n+".txt");
-        char buffer[] = new char[9];
-        int num = fr.read(buffer);
-        String data = new String(buffer,0,num);
+        FileReader fr = null;
+        try{
+            fr =  new FileReader("DB/Personal/"+n+".txt");
+            char buffer[] = new char[9];
+            int num = fr.read(buffer);
+            String data = new String(buffer,0,num);
+            if( data.equals(n+"&"+p)){
+                state = true;
+            }
+        }
+        catch(Exception ex){
+            ex.printStackTrace();
+        }
         fr.close();
-        return data;
+        return state;
     }
     public void textBoxSelector(boolean NAME){
         selector = NAME;

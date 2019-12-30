@@ -2,6 +2,7 @@ package dev;
 
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.IOException;
 
 public class MouseInput extends MouseAdapter {
     private Handler handler;
@@ -20,8 +21,13 @@ public class MouseInput extends MouseAdapter {
             clickStartUp(x,y);
         else if( page == PAGE.REGISTRATION)
             clickRegistration(x,y);
-        else if( page == PAGE.LOGIN)
-            clickLogIn(x,y);
+        else if( page == PAGE.LOGIN) {
+            try {
+                clickLogIn(x,y);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
 
 
     }
@@ -51,7 +57,7 @@ public class MouseInput extends MouseAdapter {
             }
         }
     }
-    public void clickLogIn(int x, int y){
+    public void clickLogIn(int x, int y) throws IOException {
         LogIn obj = (LogIn)handler.list.get(0);
         if( x >= 500 && x <= 700){
             if( y >= 200 && y <= 260){
@@ -66,7 +72,10 @@ public class MouseInput extends MouseAdapter {
         if( x >= 350 && x <= 650){
             if( y >= 450 && y <= 530){
                 System.out.println("Confirm");
-                Application.setPage(PAGE.PLAY);
+               if( ((LogIn)handler.list.get(0)).query())
+                    Application.setPage(PAGE.PLAY);
+               else
+                   Application.setPage(PAGE.REGISTRATION);
             }
         }
     }
