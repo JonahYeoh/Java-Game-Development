@@ -14,6 +14,7 @@ public class LogIn extends AppObject {
     protected ArrayList<Character> pwd;
     private static boolean FLAG = false;
     private boolean selector;
+    private boolean MISMATCH;
     public LogIn(int x, int y, TAG tag) {
         super(x, y, tag);
         fnt = new Font("Arial",1,50);
@@ -21,6 +22,7 @@ public class LogIn extends AppObject {
         name = new ArrayList<>();
         pwd = new ArrayList<>();
         LogIn.FLAG = true;
+        MISMATCH = false;
     }
     public void backSpace(boolean NAME){
         if( NAME ){
@@ -87,12 +89,16 @@ public class LogIn extends AppObject {
         g.fillRect(x+50,y+200,300,80);
         g.setColor(Color.BLACK);
         g.drawString("CONFIRM",x+80,y+260);
+        g.setColor(Color.RED);
+        if( MISMATCH )
+            g.drawString("Incorrect Name or Password", x-100, y+340);
     }
 
-    public boolean query() throws IOException {
+    public QUERY_STAT query() throws IOException {
         String n = "";
         String p = "";
-        boolean state = false;
+        QUERY_STAT state = QUERY_STAT.NF;
+        MISMATCH = false;
         for( int i = 0; i < name.size(); i++){
             n += name.get(i);
             p += pwd.get(i);
@@ -104,14 +110,23 @@ public class LogIn extends AppObject {
             int num = fr.read(buffer);
             String data = new String(buffer,0,num);
             if( data.equals(n+"&"+p)){
-                state = true;
+                state = QUERY_STAT.MATCH;
+            }
+            else{
+                state = QUERY_STAT.MIS;
+                MISMATCH = true;
             }
         }
         catch(Exception ex){
             ex.printStackTrace();
+            System.out.println("Record not found");
         }
-        fr.close();
-        return state;
+        finally{
+            if( fr != null)
+                fr.close();
+            System.out.println("Escape from catch");
+            return state;
+        }
     }
     public void textBoxSelector(boolean NAME){
         selector = NAME;

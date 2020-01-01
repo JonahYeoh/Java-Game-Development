@@ -44,10 +44,10 @@ public class Dashboard extends AppObject {
     public void render(Graphics g) {
         g.setColor(Color.BLACK);
         g.drawString("CPM Count : " + CPM.size(), 100, 50);
-        g.drawString("CPM : " + avgCPM, 100, 100);
-        g.drawString("SCORE : " + avgSCORE, 100, 150);
-        g.drawString("ERROR : " + avgERROR, 100, 200);
-        g.drawLine(100, 250, 100, 500);
+        //g.drawString("CPM : " + avgCPM, 100, 100);
+        //g.drawString("SCORE : " + avgSCORE, 100, 150);
+        //g.drawString("ERROR : " + avgERROR, 100, 200);
+        g.drawLine(100, 150, 100, 500);
         g.drawLine(100,500, 900, 500);
         // CPM
         g.setColor(Color.darkGray);

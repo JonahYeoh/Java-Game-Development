@@ -2,13 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="57a11fd4-94c8-4a24-a13b-83355b034ffd" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/DB/Personal/1212.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DB/Personal/hoow.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DB/Personal/oppo.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DB/Personal/quit.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DB/Personal/wenx.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DB/data_hoow.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DB/data_oppo.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DB/data_quit.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/QUERY_STAT.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DB/data_1234.txt" beforeDir="false" afterPath="$PROJECT_DIR$/DB/data_1234.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DB/data_null.txt" beforeDir="false" afterPath="$PROJECT_DIR$/DB/data_null.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TypeFaster/dev/Dashboard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TypeFaster/dev/Dashboard.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TypeFaster/dev/LogIn.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TypeFaster/dev/LogIn.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TypeFaster/dev/Menu.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TypeFaster/dev/MouseInput.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TypeFaster/dev/MouseInput.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TypeFaster/dev/ProgressBar.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dev/Dashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dev/Dashboard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dev/LogIn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dev/LogIn.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dev/ProgressBar.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dev/Menu.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dev/MouseInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dev/MouseInput.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,9 +32,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
         <option value="Kotlin File" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -126,5 +139,10 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Query code corrupted especially the workspace" />
     <option name="LAST_COMMIT_MESSAGE" value="Query code corrupted especially the workspace" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/TypeFaster$Application.ic" NAME="Application Coverage Results" MODIFIED="1577708375772" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>dev.*</FILTER>
+    </SUITE>
   </component>
 </project>
