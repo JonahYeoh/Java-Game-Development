@@ -111,6 +111,7 @@ public class LogIn extends AppObject {
             String data = new String(buffer,0,num);
             if( data.equals(n+"&"+p)){
                 state = QUERY_STAT.MATCH;
+                Application.setPlayer(n);
             }
             else{
                 state = QUERY_STAT.MIS;

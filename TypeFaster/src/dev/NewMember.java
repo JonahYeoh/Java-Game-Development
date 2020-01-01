@@ -64,6 +64,7 @@ public class NewMember extends AppObject {
         try{
             fw = new FileWriter("DB/Personal/"+n+".txt");
             fw.write(n+"&"+p);
+            Application.setPlayer(n);
             fw.close();
         }
         catch(IOException ex){

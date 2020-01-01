@@ -2,6 +2,7 @@ package dev;
 
 import java.awt.*;
 import java.io.EOFException;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -23,7 +24,7 @@ public class Dashboard extends AppObject {
         avgCPM = 0;
         avgSCORE = 0;
         avgERROR = 0;
-        data = readData();
+
         slicer();
         Dashboard.FLAG = true;
     }
@@ -42,44 +43,57 @@ public class Dashboard extends AppObject {
 
     @Override
     public void render(Graphics g) {
-        g.setColor(Color.BLACK);
-        g.drawString("CPM Count : " + CPM.size(), 100, 50);
-        //g.drawString("CPM : " + avgCPM, 100, 100);
-        //g.drawString("SCORE : " + avgSCORE, 100, 150);
-        //g.drawString("ERROR : " + avgERROR, 100, 200);
-        g.drawLine(100, 150, 100, 500);
-        g.drawLine(100,500, 900, 500);
-        // CPM
-        g.setColor(Color.darkGray);
-        int xx = 100;
-        int previousY = 500- CPM.get(0)/10;
-        int currentY;
-        for(int i = 1; i < CPM.size(); i++){
-            currentY = 500 - CPM.get(i).intValue()/10;
-            g.drawLine(xx, previousY, xx+(int)((double)800/CPM.size()),currentY );
-            previousY = currentY;
-            xx+=(int)((double)800/CPM.size());
+        Font fnt = new Font("TimesRoman",2,50);
+        g.setFont(fnt);
+        g.setColor(Color.BLUE);
+        g.drawString("DASHBOARD OF " + Application.getPlayer(),240,50);
+        if( CPM.size() != 0 ){
+            g.setColor(Color.BLACK);
+            int xA = 100, yA = 400, ht = 300, wt = 800;
+            //g.drawString("CPM Count : " + CPM.size(), 100, 100);
+            //g.drawString("CPM : " + avgCPM, 100, 100);
+            //g.drawString("SCORE : " + avgSCORE, 100, 150);
+            //g.drawString("ERROR : " + avgERROR, 100, 200);
+            g.drawLine(xA, 100, xA, yA);
+            g.drawLine(xA,yA, xA+wt, yA);
+            // CPM
+            g.setColor(Color.darkGray);
+            int xx = 100;
+            int previousY = yA- CPM.get(0)/10;
+            int currentY;
+            for(int i = 1; i < CPM.size(); i++){
+                currentY = yA - CPM.get(i).intValue()/10;
+                g.drawLine(xx, previousY, xx+(int)((double)800/CPM.size()),currentY );
+                previousY = currentY;
+                xx+=(int)((double)800/CPM.size());
+            }
+            //
+            g.setColor(Color.YELLOW);
+            xx = 100;
+            previousY = yA- ERROR.get(0)*10;
+            for(int i = 1; i < ERROR.size(); i++){
+                currentY = yA - ERROR.get(i).intValue()*10;
+                g.drawLine(xx, previousY, xx+(int)((double)800/ERROR.size()),currentY );
+                previousY = currentY;
+                xx+=(int)((double)800/ERROR.size());
+            }
+            // SCORE
+            g.setColor(Color.RED);
+            xx = 100;
+            previousY = yA- SCORE.get(0).intValue();
+            for(int i = 1; i < SCORE.size(); i++){
+                currentY = yA- SCORE.get(i).intValue();
+                g.drawLine(xx, previousY, xx+(int)((double)800/SCORE.size()),currentY );
+                previousY = currentY;
+                xx+=(int)((double)800/SCORE.size());
+            }
         }
-        //
-        g.setColor(Color.YELLOW);
-        xx = 100;
-        previousY = 500- ERROR.get(0)*10;
-        for(int i = 1; i < ERROR.size(); i++){
-            currentY = 500 - ERROR.get(i).intValue()*10;
-            g.drawLine(xx, previousY, xx+(int)((double)800/ERROR.size()),currentY );
-            previousY = currentY;
-            xx+=(int)((double)800/ERROR.size());
+        else{
+            g.setColor(Color.BLACK);
+            g.setFont(fnt);
+            g.drawString("No record found", 300,300);
         }
-        // SCORE
-        g.setColor(Color.RED);
-        xx = 100;
-        previousY = 500- SCORE.get(0).intValue();
-        for(int i = 1; i < SCORE.size(); i++){
-            currentY = 500- SCORE.get(i).intValue();
-            g.drawLine(xx, previousY, xx+(int)((double)800/SCORE.size()),currentY );
-            previousY = currentY;
-            xx+=(int)((double)800/SCORE.size());
-        }
+
     }
     public static boolean getFLAG(){
         return Dashboard.FLAG;
@@ -88,33 +102,46 @@ public class Dashboard extends AppObject {
         Dashboard.FLAG = false;
     }
     private String readData() throws IOException {
-        FileReader fr = new FileReader("DB/data_"+ Application.getPlayer() + ".txt");
-        char buffer[] = new char[256];
-        int num = 0;
-        String str = "";
-        while(true) {
-            try {
-                num = fr.read(buffer);
-                System.out.println(num);
-                if( num == -1 ){
+        FileReader fr = null;
+        String str = null;
+        try{
+            fr = new FileReader("DB/data_"+ Application.getPlayer() + ".txt");
+            char buffer[] = new char[256];
+            int num = 0;
+            str = "";
+            while(true) {
+                try {
+                    num = fr.read(buffer);
+                    System.out.println(num);
+                    if( num == -1 ){
+                        break;
+                    }
+                    str += new String(buffer, 0, num);
+                } catch (EOFException ex) {
+                    ex.printStackTrace();
                     break;
                 }
-                str += new String(buffer, 0, num);
-            } catch (EOFException ex) {
-                ex.printStackTrace();
             }
+            fr.close();
         }
-        fr.close();
+        catch(FileNotFoundException ex){
+            ex.printStackTrace();
+        }
+
+
         return str;
     }
     private void slicer() throws IOException {
-        String trimmed[] = data.split("&");
-        double dd = 0;
-        for( int i = 0; i < trimmed.length; i+=3 ){
-            //System.out.println("index " + i);
-            SCORE.add(Double.parseDouble(trimmed[i]));
-            CPM.add(Integer.parseInt(trimmed[i+1]));
-            ERROR.add(Integer.parseInt(trimmed[i+2]));
-        }
+        data = readData();
+        //if( data != null){
+            String trimmed[] = data.split("&");
+            double dd = 0;
+            for( int i = 0; i < trimmed.length; i+=3 ){
+                //System.out.println("index " + i);
+                SCORE.add(Double.parseDouble(trimmed[i]));
+                CPM.add(Integer.parseInt(trimmed[i+1]));
+                ERROR.add(Integer.parseInt(trimmed[i+2]));
+            }
+        //}
     }
 }
