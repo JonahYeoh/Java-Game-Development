@@ -71,11 +71,13 @@ public class MouseInput extends MouseAdapter {
         }
         if( x >= 350 && x <= 650){
             if( y >= 450 && y <= 530){
-                System.out.println("Confirm");
-               if( ((LogIn)handler.list.get(0)).query() == QUERY_STAT.MATCH)
-                    Application.setPage(PAGE.PLAY);
-               else if( ((LogIn)handler.list.get(0)).query() == QUERY_STAT.NF)
-                   Application.setPage(PAGE.REGISTRATION);
+                if( obj.filled(true) && obj.filled(false)) {
+                    System.out.println("Confirm");
+                    if (((LogIn) handler.list.get(0)).query() == QUERY_STAT.MATCH)
+                        Application.setPage(PAGE.PLAY);
+                    else if (((LogIn) handler.list.get(0)).query() == QUERY_STAT.NF)
+                        Application.setPage(PAGE.REGISTRATION);
+                }
             }
         }
     }

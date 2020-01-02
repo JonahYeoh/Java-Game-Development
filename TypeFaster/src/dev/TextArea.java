@@ -21,7 +21,7 @@ public class TextArea extends AppObject {
         if( currentIndex != content.length()){
             leftString = content.substring(0,currentIndex).toCharArray();
             currentChar = content.charAt(currentIndex);
-            rightString = content.substring(currentIndex+1,content.length()).toCharArray();
+            rightString = content.substring(currentIndex,content.length()).toCharArray();
         }
         else{
             leftString = content.substring(0,currentIndex).toCharArray();
@@ -59,10 +59,10 @@ public class TextArea extends AppObject {
         g.setFont(fnt);
             if(currentIndex == 0){
                 g.setColor(Color.RED);
-                g.drawString(new String(new char[]{currentChar}),125, 370);
+                //g.drawString(new String(new char[]{currentChar}),125, 370);
                 g.fillRect(125,373,15,3);
                 g.setColor(Color.BLACK);
-                g.drawString(new String(rightString),125, 400);
+                g.drawString(new String(rightString),125, 370);
             }
             else if( currentIndex == content.length()){
                 g.setColor(Color.BLACK);
@@ -75,10 +75,10 @@ public class TextArea extends AppObject {
                 g.setColor(Color.BLACK);
                 g.drawString(new String(leftString), 125, 340);
                 g.setColor(Color.RED);
-                g.drawString(new String(new char[]{currentChar}),125, 370);
+                //g.drawString(new String(new char[]{currentChar}),125, 370);
                 g.fillRect(125,373,15,3);
                 g.setColor(Color.BLACK);
-                g.drawString(new String(rightString),125, 400);
+                g.drawString(new String(rightString),125, 370);
             }
     }
     public boolean endOfLine(){

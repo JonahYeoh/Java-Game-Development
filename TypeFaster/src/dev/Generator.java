@@ -1,10 +1,7 @@
 package dev;
 
 import java.awt.*;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.util.concurrent.TimeUnit;
 
 public class Generator implements CoreOperation{
@@ -17,7 +14,7 @@ public class Generator implements CoreOperation{
     public Generator(Handler handler, Application window) {
         this.handler = handler;
         try {
-            fr = new FileReader("Paragraph/textSample.txt");
+            fr = new FileReader("Paragraph/textSample2.txt");
         }
         catch(FileNotFoundException ex){
             ex.printStackTrace();
@@ -32,7 +29,7 @@ public class Generator implements CoreOperation{
             if( !handler.list.contains(score)){
                 handler.removeAllObject();
                 handler.addObject(new ScoreArea(62,167,TAG.ScoreArea));
-                handler.addObject(new TextArea(62,250, TAG.TextArea, "somewhere"));
+                handler.addObject(new TextArea(62,250, TAG.TextArea, "testing, expect to see this everytime you come back from the home page"));
                 handler.addObject(new ImageArea(62, 83, TAG.ImageArea, handler, window));
                 System.out.println("Size : " + handler.list.size());
             }
@@ -105,11 +102,29 @@ public class Generator implements CoreOperation{
     }
     private String readNextParagraph() throws IOException {
         char buffer[] = new char[50];
-        int num = fr.read(buffer);
-        String str = new String(buffer,0,num);
-        str = str.toLowerCase();
-        System.out.println(str);
-        System.out.println(num);
+        String str = null;
+        try{
+            int num = fr.read(buffer);
+            if( num == -1 ) {
+                //fr.close();
+                fr = new FileReader("Paragraph/textSample.txt");
+                num = fr.read(buffer);
+                str = new String(buffer,0,num);
+                str = str.toLowerCase();
+                System.out.println(str);
+                System.out.println(num);
+            }
+            else{
+                str = new String(buffer,0,num);
+                str = str.toLowerCase();
+                System.out.println(str);
+                System.out.println(num);
+            }
+
+        }catch(EOFException ex){
+            ex.printStackTrace();
+        }
+
         return str;
     }
 }

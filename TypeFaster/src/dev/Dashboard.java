@@ -5,6 +5,7 @@ import java.io.EOFException;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Deque;
 
@@ -31,14 +32,16 @@ public class Dashboard extends AppObject {
 
     @Override
     public void tick() throws IOException {
-        for( int i = 0; i < CPM.size(); i++){
-            avgCPM += CPM.get(i);
-            avgSCORE += SCORE.get(i);
-            avgERROR += ERROR.get(i);
+        if( avgCPM == 0 ) {
+            for (int i = 0; i < CPM.size(); i++) {
+                avgCPM += CPM.get(i);
+                avgSCORE += SCORE.get(i);
+                avgERROR += ERROR.get(i);
+            }
+            avgCPM = avgCPM / CPM.size();
+            avgSCORE = avgSCORE / SCORE.size();
+            avgERROR = avgERROR / ERROR.size();
         }
-        avgCPM = avgCPM/CPM.size();
-        avgSCORE = avgSCORE/SCORE.size();
-        avgERROR = avgERROR/ERROR.size();
     }
 
     @Override
@@ -67,6 +70,10 @@ public class Dashboard extends AppObject {
                 previousY = currentY;
                 xx+=(int)((double)800/CPM.size());
             }
+            g.fillRect(100, 450, 100, 40);
+            Font fnt2 = new Font("TimesRoman",2,20);
+            g.setFont(fnt2);
+            g.drawString("Character Per Minute", 250, 480);
             //
             g.setColor(Color.YELLOW);
             xx = 100;
@@ -77,6 +84,9 @@ public class Dashboard extends AppObject {
                 previousY = currentY;
                 xx+=(int)((double)800/ERROR.size());
             }
+            g.fillRect(100, 530, 100, 40);
+            g.drawString("Error", 250, 560);
+
             // SCORE
             g.setColor(Color.RED);
             xx = 100;
@@ -87,6 +97,24 @@ public class Dashboard extends AppObject {
                 previousY = currentY;
                 xx+=(int)((double)800/SCORE.size());
             }
+
+
+            g.fillRect(100, 610, 100, 40);
+            g.drawString("Score", 250, 640);
+            // Average Table
+            g.setColor(Color.BLACK);
+            fnt2 = new Font("Arial", 2, 20);
+            g.drawRect(500,450, 400, 200);
+            g.drawString("ALL TIME AVERAGE", 600, 480);
+            g.drawString("Character Per Minute : ", 540, 520);
+            DecimalFormat numberFormat = new DecimalFormat("#.000");
+            g.drawString(" "+numberFormat.format(avgCPM), 750, 520);
+            g.drawString("Score : ", 675, 560);
+            g.drawString(" "+numberFormat.format(avgSCORE), 750, 560);
+            g.drawString("Error : ", 680, 600);
+            g.drawString(" "+numberFormat.format(avgERROR), 750, 600);
+            g.drawString("Total Practice : ", 600, 640);
+            g.drawString(" "+CPM.size(), 755, 640);
         }
         else{
             g.setColor(Color.BLACK);
