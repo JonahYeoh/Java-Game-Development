@@ -2,31 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="57a11fd4-94c8-4a24-a13b-83355b034ffd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/DB/Personal/1233.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DB/Personal/home.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DB/Personal/rex0.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DB/data_1233.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DB/data_home.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DB/data_rex0.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DB/data_wenx.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Paragraph/textSample2.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DB/Personal/trex.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DB/Personal/1234.txt" beforeDir="false" afterPath="$PROJECT_DIR$/DB/Personal/1234.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DB/data_1234.txt" beforeDir="false" afterPath="$PROJECT_DIR$/DB/data_1234.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DB/data_jame.txt" beforeDir="false" afterPath="$PROJECT_DIR$/DB/data_jame.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DB/data_null.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DB/data_oppo.txt" beforeDir="false" afterPath="$PROJECT_DIR$/DB/data_oppo.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Paragraph/textSample.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Paragraph/textSample.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TypeFaster/dev/Dashboard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TypeFaster/dev/Dashboard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TypeFaster/dev/Generator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TypeFaster/dev/Generator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TypeFaster/dev/MouseInput.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TypeFaster/dev/MouseInput.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TypeFaster/dev/StringReader.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TypeFaster/dev/TextArea.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TypeFaster/dev/TextArea.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DB/data_wenx.txt" beforeDir="false" afterPath="$PROJECT_DIR$/DB/data_wenx.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dev/Dashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dev/Dashboard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dev/Generator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dev/Generator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dev/MouseInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dev/MouseInput.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dev/StringReader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dev/TextArea.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dev/TextArea.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -152,7 +132,7 @@
     <option name="LAST_COMMIT_MESSAGE" value="Query code corrupted especially the workspace" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/TypeFaster$Application.ic" NAME="Application Coverage Results" MODIFIED="1577860152195" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/TypeFaster$Application.ic" NAME="Application Coverage Results" MODIFIED="1578248475271" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>dev.*</FILTER>
     </SUITE>
   </component>

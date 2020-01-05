@@ -129,6 +129,7 @@ public class Dashboard extends AppObject {
     public static void clearFLAG(){
         Dashboard.FLAG = false;
     }
+
     private String readData() throws IOException {
         FileReader fr = null;
         String str = null;
@@ -155,21 +156,20 @@ public class Dashboard extends AppObject {
         catch(FileNotFoundException ex){
             ex.printStackTrace();
         }
-
-
         return str;
     }
+
     private void slicer() throws IOException {
         data = readData();
-        //if( data != null){
+        if( data != null){
             String trimmed[] = data.split("&");
-            double dd = 0;
+
             for( int i = 0; i < trimmed.length; i+=3 ){
                 //System.out.println("index " + i);
                 SCORE.add(Double.parseDouble(trimmed[i]));
                 CPM.add(Integer.parseInt(trimmed[i+1]));
                 ERROR.add(Integer.parseInt(trimmed[i+2]));
             }
-        //}
+        }
     }
 }

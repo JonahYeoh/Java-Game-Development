@@ -29,7 +29,7 @@ public class Generator implements CoreOperation{
             if( !handler.list.contains(score)){
                 handler.removeAllObject();
                 handler.addObject(new ScoreArea(62,167,TAG.ScoreArea));
-                handler.addObject(new TextArea(62,250, TAG.TextArea, "testing, expect to see this everytime you come back from the home page"));
+                handler.addObject(new TextArea(62,250, TAG.TextArea, "testing, expect to see this everytime you come back"));
                 handler.addObject(new ImageArea(62, 83, TAG.ImageArea, handler, window));
                 System.out.println("Size : " + handler.list.size());
             }
